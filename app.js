@@ -9,7 +9,7 @@ const app = express();
 const  registroRutas = require('./src/routes/registro');
 
 // configuraciones
-app.set('port', process.env.PORT || 5000);
+app.set('port', process.env.PORT || 3000);
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'src/views'));
 
@@ -31,6 +31,6 @@ app.use('/', registroRutas);
 //archivo static
 app.use(express.static(path.join(__dirname, 'src/views')));
 
-app.listen(5000, () => {
-    console.log('Server on port 5000');
+app.listen(3000, () => {
+    console.log('Server on port 3000');
 });
