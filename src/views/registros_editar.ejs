@@ -1,0 +1,40 @@
+<% include layout/header %>
+
+<div class="container">
+    <div class="row mt-5">
+    	<div class="col-md-5">
+    		<div class="card">
+    			<div class="card-body">
+    				<form action="/actualizar/<%= data.id %>" method="post">
+                        <div class="form-group">
+                            <label for="email">RFC:</label>
+                            <input type="text" name="rfc" value="<%= data.rfc %>" class="form-control">                             
+                        </div>
+                        <div class="form-group"> 
+                            <label for="email">NAME:</label>               
+                            <input type="text" name="principalname" value="<%= data.principalname %>" class="form-control">                             
+                        </div>
+                        <div class="form-group"> 
+                            <label for="email">BUSSINES:</label>               
+                            <input type="text" name="businessname" value="<%= data.businessname %>" class="form-control">                             
+                        </div>
+                        <div class="form-group">   
+                            <label for="email">PHONE:</label>             
+                            <input type="text" name="phone" value="<%= data.phone %>" class="form-control">                             
+                        </div>
+                        <div class="form-group">  
+                            <label for="email">EMAIL:</label>              
+                            <input type="text" name="email" value="<%= data.email %>" class="form-control">                             
+                        </div>                 
+                        <button type="submit" class="btn btn-primary">
+                            ACTUALIZAR REGISTRO
+                        </button> 
+                        <a href="/" class="btn btn-info">REGRESAR</a>               
+                    </form>    			
+    			</div>    			
+    		</div>    		
+    	</div>
+    </div>
+</div>
+
+<% include layout/footer %>
