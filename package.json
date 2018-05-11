@@ -2,10 +2,10 @@
   "name": "evaluacion-verse-vicentereyes",
   "version": "1.0.0",
   "description": "",
-  "main": "app.js",
+  "main": "index.js",
   "scripts": {
-    "test": "node app.js",
-    "start": "node app.js"
+    "start": "node app.js",
+    "test": "node app.js"    
   },
   "keywords": [],
   "author": "",
