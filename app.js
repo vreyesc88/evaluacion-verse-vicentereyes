@@ -9,18 +9,20 @@ const app = express();
 const  registroRutas = require('./src/routes/registro');
 
 // configuraciones
-app.set('port', process.env.PORT || 3000);
+app.set('port', process.env.PORT || 5000);
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'src/views'));
 
 // funciones
 app.use(myconnection(mysql,{
-    host: 'localhost',
-    user: 'root',
-    password: '',
+    //host: 'mysql.hostinger.mx', 
+    host: 'us-cdbr-gcp-east-01.cleardb.net',
+    user: 'b1b3df40516a05',
+    password: '847b91d5',
     port: 3306,
-    database: 'evaluacion'
-}, 'single'));
+    database: 'gcp_ff6f1548f5c45a8d8600'
+//}, 'single'));
+}));
 
 // requerir metodos desde formularios
 app.use(express.urlencoded({extended: false}));
@@ -31,6 +33,6 @@ app.use('/', registroRutas);
 //archivo static
 app.use(express.static(path.join(__dirname, 'src/views')));
 
-app.listen(3000, () => {
-    console.log('Server on port 3000');
+app.listen(5000, () => {
+    console.log('Server on port 5000');
 });
