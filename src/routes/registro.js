@@ -3,10 +3,11 @@ const router = express.Router();
 
 const registroController = require('../controllers/registroController')
 
+// rutas
 router.get('/', registroController.inicio);
-router.post('/agregar', registroController.guardar);
 router.get('/actualizar/:id', registroController.editar);
-router.post('/actualizar/:id', registroController.actualizar);
 router.get('/borrar/:id', registroController.borrar);
+router.post('/agregar', registroController.guardar);
+router.post('/actualizar/:id', registroController.actualizar);
 
 module.exports = router;

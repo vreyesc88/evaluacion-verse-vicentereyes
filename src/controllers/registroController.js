@@ -1,7 +1,7 @@
 const controller = {};
 
+// funcion para ejecutar al iniciar
 controller.inicio = (req, res) => {
-
     req.getConnection( (err, conn) => {
         conn.query('SELECT * FROM registros', (err, registros) => {
             if(err){
@@ -13,11 +13,10 @@ controller.inicio = (req, res) => {
             });
         });
     });
-
 };
 
-controller.guardar = (req, res) => {
-    
+// funcion para guardar datos
+controller.guardar = (req, res) => {    
     const data = req.body;
     req.getConnection((err, conn) => {
         conn.query('INSERT INTO registros set ?', [data], (err, registros) => {
@@ -27,10 +26,10 @@ controller.guardar = (req, res) => {
     })
 };
 
+// funcion para editar datos (extrae los datos de la db y los agrega al form)
 controller.editar = (req, res) => {
     //console.log(req.params.id);
-    const {id} = req.params;
-    
+    const {id} = req.params;    
     req.getConnection((err, conn) => {
         conn.query('SELECT * FROM registros WHERE id = ?', [id], (err, registros) => {
             //console.log(registros);
@@ -41,11 +40,11 @@ controller.editar = (req, res) => {
     })
 };
 
+// funcion para actualizar datos
 controller.actualizar = (req, res) => {
     //console.log(req.params.id);
     const {id} = req.params;
-    const datoActualizado = req.body;
-    
+    const datoActualizado = req.body;    
     req.getConnection((err, conn) => {
         conn.query('UPDATE registros set ? WHERE id = ?', [datoActualizado,id], (err, registros) => {
             //console.log(registros);
@@ -54,10 +53,10 @@ controller.actualizar = (req, res) => {
     })
 };
 
+// funcion para borrar datos
 controller.borrar = (req, res) => {
     //console.log(req.params.id);
-    const {id} = req.params;
-    
+    const {id} = req.params;    
     req.getConnection((err, conn) => {
         conn.query('DELETE FROM registros WHERE id = ?', [id], (err, registros) => {
             //console.log(registros);

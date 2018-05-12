@@ -13,7 +13,8 @@ app.set('port', process.env.PORT || 5000);
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'src/views'));
 
-// funciones
+// conexion a base de datos
+// base de datos "ClearDB"
 app.use(myconnection(mysql, {    
     host: 'us-cdbr-gcp-east-01.cleardb.net',
     user: 'b1b3df40516a05',
